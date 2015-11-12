@@ -1,0 +1,33 @@
+{
+  "name": "tutorial_react",
+  "version": "1.0.0",
+  "description": "Version del tutorial de facebook sobre react con webpack, ecmascript6 en espanol",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vincent1bt/tutorial-de-react.git"
+  },
+  "keywords": [
+    "react",
+    "javascript",
+    "webpack",
+    "ecmascript6"
+  ],
+  "author": "vicente rodriguez cuellar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vincent1bt/tutorial-de-react/issues"
+  },
+  "homepage": "https://github.com/vincent1bt/tutorial-de-react#readme",
+  "devDependencies": {
+    "babel-core": "^6.1.4",
+    "babel-loader": "^6.1.0",
+    "webpack": "^1.12.4"
+  },
+  "dependencies": {
+    "react": "^0.14.2"
+  }
+}
