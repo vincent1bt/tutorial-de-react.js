@@ -4,7 +4,8 @@
   "description": "Version del tutorial de facebook sobre react con webpack, ecmascript6 en espanol",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack -p --progress --profile --colors",
+    "watch": "webpack-dev-server -hot --progress --colors"
   },
   "repository": {
     "type": "git",
@@ -25,9 +26,15 @@
   "devDependencies": {
     "babel-core": "^6.1.4",
     "babel-loader": "^6.1.0",
-    "webpack": "^1.12.4"
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-react": "^6.1.18",
+    "babel-preset-stage-0": "^6.1.18",
+    "html-webpack-plugin": "^1.6.2",
+    "webpack": "^1.12.4",
+    "webpack-dev-server": "^1.12.1"
   },
   "dependencies": {
-    "react": "^0.14.2"
+    "react": "^0.14.2",
+    "react-dom": "^0.14.2"
   }
 }
