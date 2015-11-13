@@ -4,19 +4,22 @@ import Comment from 'js/components/comment';
 
 export default class CommentList extends React.Component {
 	render() {
+		//con la funcion map iteramos cada elemento y creamos
+		//componentes comment pasandole las propiedades y guardadolos
+		//en el array comments
+		var comments = this.props.data.map((comment) => {
+			return (
+				<div className="commentList">
+					<Comment author={comment.email} key={comment.id}>
+						{comment.name}
+					</Comment>
+				</div>
+			)
+		});
+		//al final hacemos render del array de componentes
 		return (
-			<div className="commentList">
-				<Comment author="pete hunt">Este es un comentario</Comment>
-				{
-					//pasamos el nombre del atributo como si fuera una propiedad
-					//de un tag de html y le asignamos el valor que queramos
-				}
-				<Comment author="jordan hunt">Este es otro comentario</Comment>
-				{
-					//en el caso de this.props.children
-					//se usara lo que este adentro del componente
-				}
-
+			<div>
+				{comments}
 			</div>
 		)
 	}
