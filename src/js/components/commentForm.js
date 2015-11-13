@@ -4,15 +4,19 @@ export default class CommentForm extends React.Component {
 	handleSubmit(e) {
 		e.preventDefault();
 		//impedimos que actue como un form normal
-		let email = this.refs.author.value.trim();
+		let author = this.refs.author.value.trim();
 		//con this.refs podemos obtener el valor de los campos
 		//a los cuales hace referencia
 		//trim es un metodo para eliminar los espacios en blanco de 
 		//izquiera y derecha
 		let text = this.refs.text.value.trim();
+		//aqui se ejecutara una funcion que commentbox pasa como prop
+		this.props.onCommentSubmit({email: author, name: text});
+		//usamos email y name porque son los nombres de los campos que nos da
+		//el api
 
-		this.refs.email.value = " ";
-		this.refs.text.value = " ";
+		this.refs.author.value = "";
+		this.refs.text.value = "";
 		//vaciamos los campos
 	}
 	render() {

@@ -19,6 +19,21 @@ export default class CommentBox extends React.Component {
 				this.setState({data: data.body});
 			});
 	}
+	handleCommentSubmit(comment) {
+		//descomenta esto si tienes algun api para probar
+		// Promise.resolve(request.post("url del api")
+		// 						.send({data: comment}))
+		// 						.then((data) => {
+		// 							this.setState(data: data.body)
+		// 						});
+		//como el api no nos funciona, simplemente pasaremos el  nuevo state
+		//a los componentes
+		let comments = this.state.data;
+		comment.id = Date.now();
+		comments = comments.concat(comment);
+		this.setState({data: comments});
+
+	}
 	componentDidMount() {
 		this.loadComents();
 	}
@@ -30,7 +45,7 @@ export default class CommentBox extends React.Component {
 			<div className="commentsBox">
 				<h1>Commentarios</h1>
 				<CommentList data={this.state.data}/>
-				<CommentForm/>
+				<CommentForm onCommentSubmit={this.handleCommentSubmit.bind(this)}/>
 			</div>
 		)
 	}
